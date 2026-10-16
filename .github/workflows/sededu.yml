@@ -1,0 +1,33 @@
+
+
+name: SedEducation
+ 
+on:
+
+  workflow_dispatch:
+ 
+jobs:
+
+  sedstart-run:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Trigger Sedstart test run
+
+        uses: sedinqa/sedstart@v1
+
+        with:
+
+          api_key: ${{ secrets.SEDSTART_API_KEY_PROD }}
+
+          project_id: 1271
+
+          test_id: 12217
+
+          profile_id: 2268
+
+          browser: chrome
+
+          headless: false
